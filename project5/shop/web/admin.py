@@ -1,4 +1,5 @@
 from django.contrib import admin
+from web.models import Mobile,Computer,Product
 from . models import *
 class Mobile_display(admin.ModelAdmin):
     list_display=['name','price','images']

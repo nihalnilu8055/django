@@ -7,7 +7,7 @@ def index(requst):
 
 def mobile(requst):
     mob=Mobile.objects.all()
-    return render(requst,'phone.html',{'mob':mob})
+    return render(requst,'mobile.html',{'mob':mob})
 
 def computer(requst):
     com=Computer.objects.all()
