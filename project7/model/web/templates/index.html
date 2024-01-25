@@ -14,15 +14,15 @@
         <form method="POST">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input type="text" class="form-control" name="task" >
                 <div  class="form-text"></div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="save">Submit</button>
 
             <!-- displying data from obj -->
             {% for i in todo %}
-            <li>{{i.task}}</li>
+            <li>{{i.task}}----<button name="edit">edit</button>----<button name="delete" value="{{i.id}}">delete</button></li>
             {% endfor %}
         </form>
     </div>

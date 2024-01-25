@@ -7,8 +7,13 @@ def index(requst):
     contxt={}
     form=Todo_Form()
     if requst.method=='POST':
-        form=Todo_Form(requst.POST)
-        form.save()
+        if 'save' in requst.POST:
+            form=Todo_Form(requst.POST)
+            form.save()
+        elif 'delete' in requst.POST:
+            key=requst.POST.get('delete')
+            todo=Todo.objects.get(id=key)
+            todo.delete()
     todo=Todo.objects.all()
     contxt['form']=form
     contxt['todo']=todo
